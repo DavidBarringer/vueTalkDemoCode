@@ -11,4 +11,15 @@ app.post('/save', function(req, res){
   res.send("Saved");
 });
 
+app.get('/load', function(req, res){
+  var lists = fs.readdirSync('src/saves');
+  res.send({lists: lists});
+});
+
+app.post('/load', function(req, res){
+  var listName = req.body.listName;
+  var list = jsonfile.readFileSync('src/saves/' + listName + '.json');
+  res.send({list: list});
+});
+
 app.listen(8000, function(){});
