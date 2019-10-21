@@ -7,10 +7,17 @@
         <th>Quantity</th>
         <th>Got</th>
       </tr>
-      <tr v-for="item in list" :key="item.itemName">
-        <td>{{item.itemName}}</td>
+      <tr v-for="(item, index) in list" :key="index">
+        <td>
+          <del v-if="item.acquired">{{item.itemName}}</del>
+          <span v-else>{{item.itemName}}</span>
+        </td>
         <td>{{item.quantity}}</td>
-        <td><button>Got</button></td>
+        <td>
+          <button @click="update(index)">
+            {{!item.acquired ? "Got" : "To get"}}
+          </button>
+        </td>
       </tr>
     </table>
   </div>
@@ -29,6 +36,11 @@
       }).then((res) => {
         this.list = res.data.list;
       });
+    },
+    methods:{
+      update(index){
+        this.list[index].acquired = !this.list[index].acquired
+      }
     }
   }
 </script>
