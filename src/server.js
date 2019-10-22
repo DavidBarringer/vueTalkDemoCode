@@ -3,6 +3,9 @@ var fs = require('fs')
 var jsonfile = require ('jsonfile')
 const app = express();
 app.use(express.json());
+if(!fs.existsSync('src/saves')){
+  fs.mkdirSync('src/saves');
+}
 
 app.post('/save', function(req, res){
   var list = req.body.list;
