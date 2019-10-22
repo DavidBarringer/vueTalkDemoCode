@@ -2,13 +2,13 @@
   <div class="create">
     <h1>Create a new list</h1>
     <h2>List name: <input type="text" v-model="listName"></h2>
+    <button @click="newItem()">+</button>
     <ul>
       <li v-for="(item,index) in list" :key="index">
         <input type="text" v-model="list[index].itemName">
-        <input type="number" v-model="list[index].quantity">
+        <input type="number" class="quantity" v-model="list[index].quantity">
       </li>
     </ul>
-    <button @click="newItem()">+</button>
     <div>
       <button @click="save()">Save</button>
     </div>

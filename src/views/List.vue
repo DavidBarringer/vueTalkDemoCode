@@ -1,17 +1,14 @@
 <template>
   <div>
-    <div>List items</div>
+    <h1>List items</h1>
     <table>
       <tr>
         <th>Item</th>
         <th>Quantity</th>
         <th>Got</th>
       </tr>
-      <tr v-for="(item, index) in list" :key="index">
-        <td>
-          <del v-if="item.acquired">{{item.itemName}}</del>
-          <span v-else>{{item.itemName}}</span>
-        </td>
+      <tr v-for="(item, index) in list" :key="index" v-bind:class="[{got:item.acquired}]">
+        <td>{{item.itemName}}</td>
         <td>{{item.quantity}}</td>
         <td>
           <button @click="update(index)">

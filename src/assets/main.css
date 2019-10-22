@@ -1,0 +1,50 @@
+table {
+  width: 80%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+tr{
+  width: 80%;
+}
+
+.got{
+  background-color: green;
+}
+
+th{
+  width: 33%;
+  border-bottom: 2px solid black;
+}
+
+td{
+  min-width: 5em;
+  max-width: 10em;
+  overflow-x: hidden;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+button.list{
+  width: 10em;
+  font-size: 1rem;
+}
+
+button{
+  overflow-x: hidden;
+  font-size: 1rem;
+  height: 2rem;
+}
+
+input{
+  font-size: 1rem;
+}
+
+.quantity{
+  width: 3rem;
+}
+
+h1{
+  text-align: center;
+  color: black;
+}
