@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.1.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jsonfile": "^5.0.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
